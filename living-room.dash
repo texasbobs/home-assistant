@@ -1,0 +1,69 @@
+title: Living Room Panel
+widget_dimensions: [120, 120]
+widget_size: [1, 1]
+widget_margins: [25, 25]
+columns: 4
+global_parameters:
+    use_comma: 0
+    precision: 1
+    use_hass_icon: 1
+    namespace: default
+    devices:
+      media_player:
+        step: 5
+
+# Scenes
+normal_lights:
+    widget_type: scene
+    title: Normal Lights
+    entity: scene.main_lights_on
+movie_lights:
+    widget_type: scene
+    title: Movie Lights
+    entity: scene.movie_lights
+    icon_on: mdi-movie-open
+    icon_off: mdi-movie-open-outline
+lights_out:
+    widget_type: scene
+    title: Turn Off Lights
+    entity: scene.main_lights_off
+    icon_off: mdi-lightbulb-off
+    icon_on: mdi-lightbulb-on
+
+#Lights
+sofa_light:
+    widget_type: light
+    title: Sofa Light
+    on_attributes:
+        brightness: 100
+        color_temp: 250
+    icon_on: mdi-lightbulb-on
+    icon_off: mdi-lightbulb-off        
+    entity: light.sofa_light
+
+chair_light:
+    widget_type: light
+    title: Chair Light
+    on_attributes:
+        brightness: 100
+        color_temp: 250
+    icon_on: mdi-lightbulb-on
+    icon_off: mdi-lightbulb-off        
+    entity: light.chair_light
+fan:
+    widget_type: switch
+    title: Fan
+    icon_on: mdi-fan
+    icon_off: mdi-fan-off
+    entity: switch.jasco_products_45609_on_off_relay_switch_switch
+    
+layout:
+    - clock.clock(4x1)
+    - normal_lights, movie_lights, lights_out, scene.main_lights_dim
+    - sofa_light, chair_light, spacer, fan
+
+    
+    
+    
+    
+    
