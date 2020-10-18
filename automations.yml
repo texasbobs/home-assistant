@@ -193,8 +193,9 @@
     type: turn_off
   mode: single
   
-  ## ALARM ##
-#Entry Detected
+  ## ALARM ITEMS ##
+#Add all of the other sensors to the triggers below once defined  
+#Entry Detected While Armed
 - id: '1602731931547'
   alias: Trigger alarm while armed home or away
   trigger:
@@ -232,7 +233,7 @@
       data:
         triggered: 'yes'
   
-#Opened
+#Opened (test removing the disarmed trigger since the disarm script plays the open sound)
 - id: '1602731931549'
   alias: Door/Window Opened or Disarmed
   trigger:
